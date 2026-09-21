@@ -37,6 +37,71 @@ npm start
 
 キー未設定時は3つの音響特徴によるルール選択です（音楽タグは選択に使いません）。APIエラー時にデモへ黙って切り替えることはありません。説明欄は選択時の測定値と登録済み情報の表示であり、Jevの推論説明ではありません。
 
+## 曲の評価軸
+
+曲の良し悪しを採点するのではなく、カクテルに対応させるために次の6項目を使います。
+
+| 項目 | 測定・推定内容 | Jevへ渡す値 | 味への対応のヒント |
+|---|---|---|---|
+| Energy | 波形のRMSによる音量感。曲の激しさそのものではない | `audio.energy`: 0〜1 | 活発さ、スパイス、炭酸 |
+| Brightness | スペクトル重心による高域への偏り | `audio.brightness`: 0〜1 | 柑橘、シャープさ、爽快感 |
+| Bass | 全周波数のパワーに占める250Hz未満の比率 | `audio.bass`: 0〜1 | コク、重厚さ、深み |
+| ジャンル | MusiCNNの出力から対象28タグを抽出し、上位3候補を採用 | `music.genres`: ラベルと0〜1のスコア | jazz・bluesなら深み、など |
+| ムード | MusiCNNの出力から曲の印象を表す8タグの上位3候補を採用 | `music.moods`: ラベルと0〜1のスコア | 穏やかなら丸い味、にぎやかなら華やかさ |
+| BPM | Essentiaのビート解析によるテンポ | `music.bpm`: 整数、または未判定の`null` | 速いテンポなら軽快で爽やかな一杯、など |
+
+音響特徴は約100msごとに計算し、直近10秒の平均を使います。Energyは `clamp((20 × log10(RMS) + 55) / 45)`、Brightnessは `clamp(log2(1 + 重心Hz / 400) / 4)` で0〜1に変換します。`clamp`は0未満を0、1超を1に制限する処理です。画面では100倍して表示します。録音音量やマスタリングに影響される相対的な指標です。
+
+ジャンル・ムード・BPMは直近12秒を約6秒ごとに解析します。ムードの対象は `happy`（明るい）、`sad`（切ない）、`Mellow`（穏やか）、`chill`（落ち着く）、`chillout`（リラックス）、`party`（にぎやか）、`beautiful`（美しい）、`easy listening`（やさしい）です。画面では日本語に置き換えますが、Jevにはモデルの元ラベルを渡します。ジャンルの全28タグは [public/music-analysis.js](public/music-analysis.js) に定義しています。
+
+タグスコアは校正された確率ではありません。0.15未満の候補も削除せず、弱い推定として渡します。BPMの探索範囲は40〜208で、解析器の信頼度が1未満、または検出拍が4個未満なら未判定にします。`tempoConfidence`には解析器の生の信頼度を渡します（0〜1の確率ではありません）。
+
+## Jevへの渡し方
+
+ブラウザからローカルサーバーの `POST /api/recommend` へ `features`、`music`、`preference` を送ります。サーバーは範囲とラベルを検証し、[catalog.mjs](catalog.mjs) の `requestBody()` でJevへのリクエストを組み立てます。[server.mjs](server.mjs) がサーバー側のAPIキーを使い、`POST https://api.typesafe.ai/v1/systemone` に送信します。
+
+リクエストは次の3部分で構成します。
+
+- **`state`：観測データと解釈上の注意。** `audio`に3つの音響特徴、`music`にモデル名・解析秒数・ジャンル・ムード・BPM・テンポ信頼度、`preference`にレシピ範囲を格納。`measurement`には「タグは確率ではない」「ムードは聴取者の感情ではない」「BPMには半分・倍の誤りがある」「弱いタグは暫定値」と明記します。
+- **`questions.cocktail.instructions`：選択の指示。** 音の質感とタグを総合し、味への創作的な対応として選ぶよう指示します。表の対応例はヒントで、固定ルールや固定の数値重みではありません。弱いタグを重視しすぎず、`music`が`null`なら音響特徴だけを使います。
+- **`questions.cocktail.criteria`：選択肢。** レシピIDをキーに、名前・味の説明・材料を渡します。通常は20種類、ノンアルコール指定では事前に6種類へ絞ります。配合を新しく生成するのではなく、既存の一杯を選ぶ`choice`質問です。
+
+以下は構造を示すJSON例です。数値は説明用で、`measurement`と`instructions`は短縮しています。タグとレシピ候補も一部のみ掲載しています。
+
+```json
+{
+  "model": "jev-latest",
+  "state": {
+    "audio": { "energy": 0.54, "brightness": 0.10, "bass": 0.99 },
+    "music": {
+      "source": "msd-musicnn-1",
+      "windowSeconds": 12,
+      "bpm": 119,
+      "tempoConfidence": 2.5,
+      "genres": [{ "label": "jazz", "score": 0.25 }],
+      "moods": [{ "label": "chillout", "score": 0.05 }]
+    },
+    "measurement": "Tag activations are not calibrated probabilities; weak tags are tentative.",
+    "preference": "all"
+  },
+  "questions": {
+    "cocktail": {
+      "type": "choice",
+      "instructions": "Choose a pleasing metaphorical music-to-taste pairing. Weigh the combination. Avoid over-weighting weak tag scores.",
+      "criteria": {
+        "old-fashioned": {
+          "name": "Old Fashioned",
+          "taste": "温かみ、樽香、落ち着き",
+          "ingredients": ["バーボン 45ml", "シロップ 5ml", "アロマティックビターズ 2滴"]
+        }
+      }
+    }
+  }
+}
+```
+
+応答の `answers.cocktail.choice` を許可済みレシピIDと照合し、該当する配合・作り方を表示します。`answers.cocktail.confidence` は選択肢間の分布の集中度として表示し、正答率とは扱いません。レシピの `target`（3つの目標音響値）はAPIキー未設定のデモ用で、Jevの選択肢には渡していません。
+
 ## モデル比較
 
 [CLMR・MERTの比較と評価計画](docs/model-comparison.md)。現在はMusiCNNを実装済み。CLMRとMERTは資料調査までで、導入・速度・精度の実測は未実施です。
