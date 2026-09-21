@@ -1,0 +1,480 @@
+{
+  "createdAt": "2026-09-21T23:29:48.190Z",
+  "live": true,
+  "repeats": 3,
+  "window": [
+    0,
+    12
+  ],
+  "acousticMethod": "Offline AnalyserNode approximation, 44.1kHz, Blackman 2048, magnitude smoothing 0.7 at 100ms; average final 10s. Not browser-bit-identical.",
+  "musicBackend": "TensorFlow.js CPU, same model/preprocessing as application",
+  "runs": [
+    {
+      "file": "01-soft-evening.wav",
+      "repeat": 1,
+      "method": "rule",
+      "choice": "dark-stormy",
+      "model": "squared-distance",
+      "selectionMs": 0.14858299999832525
+    },
+    {
+      "file": "01-soft-evening.wav",
+      "repeat": 1,
+      "method": "jev-audio",
+      "requestSha256": "df0becfce578e2db3bf87748b70abda740ce33e77b50ce60abe56958927c2e89",
+      "choice": "dark-stormy",
+      "confidence": 0.51,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2412,
+        "output_tokens": 207
+      },
+      "selectionMs": 611.8924169999991
+    },
+    {
+      "file": "01-soft-evening.wav",
+      "repeat": 1,
+      "method": "jev-full",
+      "requestSha256": "075c8eb97f3d2823b09312295fd15012fc5cb3035cde9bc007e5ab96e4c994c5",
+      "choice": "dark-stormy",
+      "confidence": 0.34,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2687,
+        "output_tokens": 207
+      },
+      "selectionMs": 216.66312499999913
+    },
+    {
+      "file": "02-citrus-spark.wav",
+      "repeat": 1,
+      "method": "rule",
+      "choice": "gin-tonic",
+      "model": "squared-distance",
+      "selectionMs": 0.043208000002778135
+    },
+    {
+      "file": "02-citrus-spark.wav",
+      "repeat": 1,
+      "method": "jev-audio",
+      "requestSha256": "b4db76585109ef3590afd6d8934cc87fd0da9bc1b633a84b456abe2da498ed3b",
+      "choice": "moscow-mule",
+      "confidence": 0.27,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2413,
+        "output_tokens": 207
+      },
+      "selectionMs": 225.12358400000085
+    },
+    {
+      "file": "02-citrus-spark.wav",
+      "repeat": 1,
+      "method": "jev-full",
+      "requestSha256": "56b5e364e7cf6b6a693bbe5731014c203070418710ec0a289a8a127dbb618cee",
+      "choice": "mojito",
+      "confidence": 0.15,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2696,
+        "output_tokens": 206
+      },
+      "selectionMs": 229.19304199999897
+    },
+    {
+      "file": "03-deep-groove.wav",
+      "repeat": 1,
+      "method": "rule",
+      "choice": "dark-stormy",
+      "model": "squared-distance",
+      "selectionMs": 0.04858299999978044
+    },
+    {
+      "file": "03-deep-groove.wav",
+      "repeat": 1,
+      "method": "jev-audio",
+      "requestSha256": "3493027a324b1b66d3c2dc09690f924361bc160357dee51a47efbf454e265280",
+      "choice": "dark-stormy",
+      "confidence": 0.54,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2412,
+        "output_tokens": 207
+      },
+      "selectionMs": 215.29645799999707
+    },
+    {
+      "file": "03-deep-groove.wav",
+      "repeat": 1,
+      "method": "jev-full",
+      "requestSha256": "420a0c2c38f4baf39517c176b668983a7c6c9352b0bc1ca21586e520addd5282",
+      "choice": "dark-stormy",
+      "confidence": 0.38,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2695,
+        "output_tokens": 207
+      },
+      "selectionMs": 214.47154199999932
+    },
+    {
+      "file": "01-soft-evening.wav",
+      "repeat": 2,
+      "method": "rule",
+      "choice": "dark-stormy",
+      "model": "squared-distance",
+      "selectionMs": 0.04504199999792036
+    },
+    {
+      "file": "01-soft-evening.wav",
+      "repeat": 2,
+      "method": "jev-full",
+      "requestSha256": "075c8eb97f3d2823b09312295fd15012fc5cb3035cde9bc007e5ab96e4c994c5",
+      "choice": "dark-stormy",
+      "confidence": 0.34,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2687,
+        "output_tokens": 207
+      },
+      "selectionMs": 227.80525000000125
+    },
+    {
+      "file": "01-soft-evening.wav",
+      "repeat": 2,
+      "method": "jev-audio",
+      "requestSha256": "df0becfce578e2db3bf87748b70abda740ce33e77b50ce60abe56958927c2e89",
+      "choice": "dark-stormy",
+      "confidence": 0.55,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2412,
+        "output_tokens": 207
+      },
+      "selectionMs": 200.86475000000064
+    },
+    {
+      "file": "02-citrus-spark.wav",
+      "repeat": 2,
+      "method": "rule",
+      "choice": "gin-tonic",
+      "model": "squared-distance",
+      "selectionMs": 0.016625000000203727
+    },
+    {
+      "file": "02-citrus-spark.wav",
+      "repeat": 2,
+      "method": "jev-full",
+      "requestSha256": "56b5e364e7cf6b6a693bbe5731014c203070418710ec0a289a8a127dbb618cee",
+      "choice": "mojito",
+      "confidence": 0.12,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2696,
+        "output_tokens": 206
+      },
+      "selectionMs": 231.9935000000005
+    },
+    {
+      "file": "02-citrus-spark.wav",
+      "repeat": 2,
+      "method": "jev-audio",
+      "requestSha256": "b4db76585109ef3590afd6d8934cc87fd0da9bc1b633a84b456abe2da498ed3b",
+      "choice": "moscow-mule",
+      "confidence": 0.28,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2413,
+        "output_tokens": 207
+      },
+      "selectionMs": 320.20416699999987
+    },
+    {
+      "file": "03-deep-groove.wav",
+      "repeat": 2,
+      "method": "rule",
+      "choice": "dark-stormy",
+      "model": "squared-distance",
+      "selectionMs": 0.07454100000177277
+    },
+    {
+      "file": "03-deep-groove.wav",
+      "repeat": 2,
+      "method": "jev-full",
+      "requestSha256": "420a0c2c38f4baf39517c176b668983a7c6c9352b0bc1ca21586e520addd5282",
+      "choice": "dark-stormy",
+      "confidence": 0.38,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2695,
+        "output_tokens": 207
+      },
+      "selectionMs": 246.3472499999989
+    },
+    {
+      "file": "03-deep-groove.wav",
+      "repeat": 2,
+      "method": "jev-audio",
+      "requestSha256": "3493027a324b1b66d3c2dc09690f924361bc160357dee51a47efbf454e265280",
+      "choice": "dark-stormy",
+      "confidence": 0.46,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2412,
+        "output_tokens": 207
+      },
+      "selectionMs": 225.54254199999923
+    },
+    {
+      "file": "01-soft-evening.wav",
+      "repeat": 3,
+      "method": "rule",
+      "choice": "dark-stormy",
+      "model": "squared-distance",
+      "selectionMs": 0.03875000000334694
+    },
+    {
+      "file": "01-soft-evening.wav",
+      "repeat": 3,
+      "method": "jev-audio",
+      "requestSha256": "df0becfce578e2db3bf87748b70abda740ce33e77b50ce60abe56958927c2e89",
+      "choice": "dark-stormy",
+      "confidence": 0.52,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2412,
+        "output_tokens": 207
+      },
+      "selectionMs": 236.2469170000004
+    },
+    {
+      "file": "01-soft-evening.wav",
+      "repeat": 3,
+      "method": "jev-full",
+      "requestSha256": "075c8eb97f3d2823b09312295fd15012fc5cb3035cde9bc007e5ab96e4c994c5",
+      "choice": "dark-stormy",
+      "confidence": 0.35,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2687,
+        "output_tokens": 207
+      },
+      "selectionMs": 198.2510000000002
+    },
+    {
+      "file": "02-citrus-spark.wav",
+      "repeat": 3,
+      "method": "rule",
+      "choice": "gin-tonic",
+      "model": "squared-distance",
+      "selectionMs": 0.044499999999970896
+    },
+    {
+      "file": "02-citrus-spark.wav",
+      "repeat": 3,
+      "method": "jev-audio",
+      "requestSha256": "b4db76585109ef3590afd6d8934cc87fd0da9bc1b633a84b456abe2da498ed3b",
+      "choice": "moscow-mule",
+      "confidence": 0.27,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2413,
+        "output_tokens": 207
+      },
+      "selectionMs": 244.44650000000183
+    },
+    {
+      "file": "02-citrus-spark.wav",
+      "repeat": 3,
+      "method": "jev-full",
+      "requestSha256": "56b5e364e7cf6b6a693bbe5731014c203070418710ec0a289a8a127dbb618cee",
+      "choice": "mojito",
+      "confidence": 0.17,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2696,
+        "output_tokens": 206
+      },
+      "selectionMs": 248.7676250000004
+    },
+    {
+      "file": "03-deep-groove.wav",
+      "repeat": 3,
+      "method": "rule",
+      "choice": "dark-stormy",
+      "model": "squared-distance",
+      "selectionMs": 0.035166000001481734
+    },
+    {
+      "file": "03-deep-groove.wav",
+      "repeat": 3,
+      "method": "jev-audio",
+      "requestSha256": "3493027a324b1b66d3c2dc09690f924361bc160357dee51a47efbf454e265280",
+      "choice": "dark-stormy",
+      "confidence": 0.49,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2412,
+        "output_tokens": 207
+      },
+      "selectionMs": 205.4749170000032
+    },
+    {
+      "file": "03-deep-groove.wav",
+      "repeat": 3,
+      "method": "jev-full",
+      "requestSha256": "420a0c2c38f4baf39517c176b668983a7c6c9352b0bc1ca21586e520addd5282",
+      "choice": "dark-stormy",
+      "confidence": 0.39,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2695,
+        "output_tokens": 207
+      },
+      "selectionMs": 243.65058399999907
+    }
+  ],
+  "clips": [
+    {
+      "file": "01-soft-evening.wav",
+      "sha256": "c1d03af343946206c1c8126e111168aa62330b07a17b65b53ab1e7c2ddb099ad",
+      "analysisMs": 7821.476209,
+      "input": {
+        "music": {
+          "source": "msd-musicnn-1",
+          "windowSeconds": 12,
+          "bpm": 80,
+          "tempoConfidence": 2.946449041366577,
+          "genres": [
+            {
+              "label": "ambient",
+              "score": 0.3244706392288208
+            },
+            {
+              "label": "electronic",
+              "score": 0.2985299825668335
+            },
+            {
+              "label": "experimental",
+              "score": 0.147122323513031
+            }
+          ],
+          "moods": [
+            {
+              "label": "chillout",
+              "score": 0.1052178144454956
+            },
+            {
+              "label": "beautiful",
+              "score": 0.02954617328941822
+            },
+            {
+              "label": "chill",
+              "score": 0.027856070548295975
+            }
+          ]
+        },
+        "preference": "all",
+        "features": {
+          "energy": 0.7879678418493752,
+          "brightness": 0.10882027624735673,
+          "bass": 0.9399974031952018
+        }
+      }
+    },
+    {
+      "file": "02-citrus-spark.wav",
+      "sha256": "b574dafce9475c1e8e3039d85a06890f46b5d43f9250ed8d0a90ca4fe94f8475",
+      "analysisMs": 8133.986041,
+      "input": {
+        "music": {
+          "source": "msd-musicnn-1",
+          "windowSeconds": 12,
+          "bpm": 118,
+          "tempoConfidence": 3.814143419265747,
+          "genres": [
+            {
+              "label": "electronic",
+              "score": 0.4397338032722473
+            },
+            {
+              "label": "electronica",
+              "score": 0.1499173492193222
+            },
+            {
+              "label": "ambient",
+              "score": 0.13030849397182465
+            }
+          ],
+          "moods": [
+            {
+              "label": "chillout",
+              "score": 0.1736927032470703
+            },
+            {
+              "label": "chill",
+              "score": 0.044969577342271805
+            },
+            {
+              "label": "Mellow",
+              "score": 0.027336828410625458
+            }
+          ]
+        },
+        "preference": "all",
+        "features": {
+          "energy": 0.8157247446348256,
+          "brightness": 0.28282052024581844,
+          "bass": 0.18914339043715833
+        }
+      }
+    },
+    {
+      "file": "03-deep-groove.wav",
+      "sha256": "964666ceba5fed6353526f8f2b7fa9b2079318a8bdb79abc098e3f5795cdfe06",
+      "analysisMs": 6512.600041999998,
+      "input": {
+        "music": {
+          "source": "msd-musicnn-1",
+          "windowSeconds": 12,
+          "bpm": 110,
+          "tempoConfidence": 3.8915436267852783,
+          "genres": [
+            {
+              "label": "electronic",
+              "score": 0.5064435005187988
+            },
+            {
+              "label": "ambient",
+              "score": 0.24762514233589172
+            },
+            {
+              "label": "electronica",
+              "score": 0.1723133772611618
+            }
+          ],
+          "moods": [
+            {
+              "label": "chillout",
+              "score": 0.15737588703632355
+            },
+            {
+              "label": "chill",
+              "score": 0.035300735384225845
+            },
+            {
+              "label": "beautiful",
+              "score": 0.015294631011784077
+            }
+          ]
+        },
+        "preference": "all",
+        "features": {
+          "energy": 0.7296658827183519,
+          "brightness": 0.05810074020446294,
+          "bass": 0.9994329113665785
+        }
+      }
+    }
+  ]
+}

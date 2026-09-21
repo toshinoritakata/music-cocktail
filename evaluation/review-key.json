@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1-A",
+    "file": "01-soft-evening.wav",
+    "method": "jev-audio",
+    "choice": "dark-stormy"
+  },
+  {
+    "id": "1-B",
+    "file": "01-soft-evening.wav",
+    "method": "jev-full",
+    "choice": "dark-stormy"
+  },
+  {
+    "id": "1-C",
+    "file": "01-soft-evening.wav",
+    "method": "rule",
+    "choice": "dark-stormy"
+  },
+  {
+    "id": "2-A",
+    "file": "02-citrus-spark.wav",
+    "method": "rule",
+    "choice": "gin-tonic"
+  },
+  {
+    "id": "2-B",
+    "file": "02-citrus-spark.wav",
+    "method": "jev-audio",
+    "choice": "moscow-mule"
+  },
+  {
+    "id": "2-C",
+    "file": "02-citrus-spark.wav",
+    "method": "jev-full",
+    "choice": "mojito"
+  },
+  {
+    "id": "3-A",
+    "file": "03-deep-groove.wav",
+    "method": "rule",
+    "choice": "dark-stormy"
+  },
+  {
+    "id": "3-B",
+    "file": "03-deep-groove.wav",
+    "method": "jev-full",
+    "choice": "dark-stormy"
+  },
+  {
+    "id": "3-C",
+    "file": "03-deep-groove.wav",
+    "method": "jev-audio",
+    "choice": "dark-stormy"
+  }
+]
